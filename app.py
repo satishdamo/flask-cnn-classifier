@@ -6,7 +6,7 @@ import numpy as np
 import os
 from dotenv import load_dotenv
 from openai import OpenAI
-from playsound import playsound
+from pygame import mixer
 
 load_dotenv()  # take environment variables from .env
 
@@ -22,7 +22,9 @@ def convert_text_to_speech(input_text):
     )
 
     response.stream_to_file("output.mp3")
-    playsound("./output.mp3")
+    mixer.init()
+    mixer.music.load('./output.mp3')
+    mixer.music.play()
 
 app = Flask(__name__)
 model = load_model('cifar10_cnn_model.h5')

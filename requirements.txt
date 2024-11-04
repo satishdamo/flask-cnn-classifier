@@ -1,6 +1,6 @@
-tensorflow
 flask
+tensorflow
 pillow
 openai
 python-dotenv
-playsound
+pygame
