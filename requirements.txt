@@ -1,6 +1,9 @@
+pip
 tensorflow
 flask
 pillow
 openai
 python-dotenv
 playsound
+wheel
+setuptools
