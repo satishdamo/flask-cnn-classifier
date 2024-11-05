@@ -6,7 +6,6 @@ import numpy as np
 import os
 from dotenv import load_dotenv
 from openai import OpenAI
-from playsound import playsound
 import tempfile
 
 load_dotenv()  # take environment variables from .env
