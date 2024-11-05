@@ -30,7 +30,7 @@
             loaderImage.style.display="inline-block";
             if (imageInput.files.length > 0) {
                 formData.append('image', imageInput.files[0]);
-                //give endpoints without local domains
+                //give endpoints without local domains names
                 const response = await fetch('/predict', {
                     method: 'POST',
                     body: formData
