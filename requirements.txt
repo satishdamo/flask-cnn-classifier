@@ -3,4 +3,4 @@ tensorflow
 pillow
 openai
 python-dotenv
-pygame
+playsound

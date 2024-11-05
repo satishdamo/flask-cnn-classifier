@@ -6,7 +6,8 @@ import numpy as np
 import os
 from dotenv import load_dotenv
 from openai import OpenAI
-from pygame import mixer
+from playsound import playsound
+import tempfile
 
 load_dotenv()  # take environment variables from .env
 
@@ -20,11 +21,13 @@ def convert_text_to_speech(input_text):
         voice="alloy",
         input=f'Hi, your input is {input_text}'
     )
-
-    response.stream_to_file("output.mp3")
-    mixer.init()
-    mixer.music.load('./output.mp3')
-    mixer.music.play()
+    
+    with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as temp_file: 
+        temp_file_path = temp_file.name 
+    
+    response.stream_to_file(temp_file_path) 
+    #print(f"File saved at {temp_file_path}")
+    playsound(temp_file_path)
 
 app = Flask(__name__)
 model = load_model('cifar10_cnn_model.h5')
