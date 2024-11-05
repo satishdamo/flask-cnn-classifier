@@ -27,7 +27,7 @@ def convert_text_to_speech(input_text):
     
     response.stream_to_file(temp_file_path) 
     #print(f"File saved at {temp_file_path}")
-    playsound(temp_file_path)
+    #playsound(temp_file_path)
 
 app = Flask(__name__)
 model = load_model('cifar10_cnn_model.h5')
